@@ -68,3 +68,31 @@ body {
 	text-decoration:none;
 	text-shadow:0px 1px 0px #2f6627;
 }
+#contact-title {
+    position: relative;
+    top:40px;
+    font-size:50px;
+    left:60px;
+}
+#contact-form{
+    display: inline-block;
+    position: relative;
+    top:50px;
+    left:60px;
+}
+#submit-button{
+    box-shadow:inset 0px 1px 0px 0px #cf866c;
+	background:linear-gradient(to bottom, #d0451b 5%, #bc3315 100%);
+	background-color:#d0451b;
+	border-radius:42px;
+	border:1px solid #942911;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:9px 36px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #854629;
+}
