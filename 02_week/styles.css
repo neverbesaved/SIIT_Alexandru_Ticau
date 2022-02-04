@@ -1,0 +1,15 @@
+.page-header { 
+    background-color: #7F7CAF;
+    width:100%;
+}
+#logo {
+    text-align: left;
+    font-size: 2rem;
+}
+#contact-button {
+    position: relative;
+}
+#home-button { 
+    position: relative;
+   
+}
