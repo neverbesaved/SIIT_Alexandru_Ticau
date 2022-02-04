@@ -11,6 +11,13 @@ body {
     position: relative;
     height:80px;
 }
+.page-footer { 
+    background-color: #005f73;
+    width:100%;
+    position: absolute;
+    height:120px;
+    bottom:0;
+}
 #logo {
     text-align: left;
     font-size: 4rem;
