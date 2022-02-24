@@ -35,19 +35,40 @@ function minMax(ourArray) {
 // 3. Create a function that takes a string and returns a string in which each character is repeated once.
 // https://edabit.com/challenge/Mc6Xi4PRw7fDzeMDB
 function doubleChar(string) {
-    let resultedString =new String;
-    for(i=0;i<string.length;i++){
-        resultedString+=string[i]
-        resultedString+=string[i]
-    }
-    return resultedString
+  let resultedString = new String();
+  for (i = 0; i < string.length; i++) {
+    resultedString += string[i];
+    resultedString += string[i];
+  }
+  return resultedString;
 }
 
 // 4. A set is a collection of unique items. A set can be formed from an array by removing all duplicate items.
 // Create a function that sorts an array and removes all duplicate items from it.
 // https://edabit.com/challenge/Mo6Coy4PpTbZgtDKd
-function set(array){     
-  ourSet = new Set(array)       //cea mai simpla solutie
+function set(array) {
+  ourSet = new Set(array); //cea mai simpla solutie
+  return ourSet;
+}
+
+// sau
+
+function set(array) {
+  let ourSet=[];
+  let repeatedElement=false;
+  for(i=0;i<array.length;i++){
+      let elementIndex = array.indexOf(array[i])
+      for(j=0;j<ourSet.length;j++){
+        if(array[elementIndex]==ourSet[j]){            // Complexitatea putin mare din cauza a 2 cicluri for , 
+          repeatedElement=true;                        // dar nu mi-a venit in minte alta solutie
+        } else {
+          repeatedElement=false;
+        }
+      }
+      if(repeatedElement==false){
+        ourSet.push(array[elementIndex])
+      }
+  } 
   return ourSet
 }
 
@@ -57,21 +78,27 @@ function set(array){
 // If there are 2 people, return "user1 and user2 online".
 // // If there are n>2 people, return the first two names and add "and n-2 more online".
 // https://edabit.com/challenge/hscAGyt4iNZ3PKy3g
-function chatroomStatus(users){
-  let status ="";
-    switch (users.length){
-      case 0 :
-        status="no one online";
-        break;
-      case 1 : 
-        status=users[0]+" online"
-        break;
-      case 2 :
-        status=users[0]+" and "+users[1]+" online";
-        break;
-      default: {
-        status=users[0]+" "+users[1]+" and "+(users.length-2)+" more online"
-      }
+function chatroomStatus(users) {
+  let status = "";
+  switch (users.length) {
+    case 0:
+      status = "no one online";
+      break;
+    case 1:
+      status = users[0] + " online";
+      break;
+    case 2:
+      status = users[0] + " and " + users[1] + " online";
+      break;
+    default: {
+      status =
+        users[0] +
+        " " +
+        users[1] +
+        " and " +
+        (users.length - 2) +
+        " more online";
     }
-    return status
+  }
+  return status;
 }
