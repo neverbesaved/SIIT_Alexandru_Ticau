@@ -46,23 +46,32 @@ function doubleChar(string) {
 // 4. A set is a collection of unique items. A set can be formed from an array by removing all duplicate items.
 // Create a function that sorts an array and removes all duplicate items from it.
 // https://edabit.com/challenge/Mo6Coy4PpTbZgtDKd
-function set(array){
-    let testedElement=array[0];
-    let ourSet = [];
-    let repeated=false;
-    for(i=1;i<array.length;i++){
-        if(testedElement==array[i]){
-            repeated=true;
-        } else { 
-            repeated=false
-        }
-        
-        if(repeated){
-            continue
-        } else {
-            ourSet.push(array[i])
-        }
-        testedElement==array[i];
+function set(array){     
+  ourSet = new Set(array)       //cea mai simpla solutie
+  return ourSet
+}
+
+// 5. Write a function that returns the number of users in a chatroom based on the following rules:
+// If there is no one, return "no one online".
+// If there is 1 person, return "user1 online".
+// If there are 2 people, return "user1 and user2 online".
+// // If there are n>2 people, return the first two names and add "and n-2 more online".
+// https://edabit.com/challenge/hscAGyt4iNZ3PKy3g
+function chatroomStatus(users){
+  let status ="";
+    switch (users.length){
+      case 0 :
+        status="no one online";
+        break;
+      case 1 : 
+        status=users[0]+" online"
+        break;
+      case 2 :
+        status=users[0]+" and "+users[1]+" online";
+        break;
+      default: {
+        status=users[0]+" "+users[1]+" and "+(users.length-2)+" more online"
+      }
     }
-    return ourSet
+    return status
 }
