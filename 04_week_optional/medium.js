@@ -54,22 +54,23 @@ function set(array) {
 // sau
 
 function set(array) {
-  let ourSet=[];
-  let repeatedElement=false;
-  for(i=0;i<array.length;i++){
-      let elementIndex = array.indexOf(array[i])
-      for(j=0;j<ourSet.length;j++){
-        if(array[elementIndex]==ourSet[j]){            // Complexitatea putin mare din cauza a 2 cicluri for , 
-          repeatedElement=true;                        // dar nu mi-a venit in minte alta solutie
-        } else {
-          repeatedElement=false;
-        }
+  let ourSet = [];
+  let repeatedElement = false;
+  for (i = 0; i < array.length; i++) {
+    let elementIndex = array.indexOf(array[i]);
+    for (j = 0; j < ourSet.length; j++) {
+      if (array[elementIndex] == ourSet[j]) {
+        // Complexitatea putin mare din cauza a 2 cicluri for ,
+        repeatedElement = true; // dar nu mi-a venit in minte alta solutie
+      } else {
+        repeatedElement = false;
       }
-      if(repeatedElement==false){
-        ourSet.push(array[elementIndex])
-      }
-  } 
-  return ourSet
+    }
+    if (repeatedElement == false) {
+      ourSet.push(array[elementIndex]);
+    }
+  }
+  return ourSet;
 }
 
 // 5. Write a function that returns the number of users in a chatroom based on the following rules:
