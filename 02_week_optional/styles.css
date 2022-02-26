@@ -48,17 +48,53 @@ p {
     margin: 0;
     color: #545F66 ;
 }
-.icon:checked { 
+.star:hover {
+        color: #F5BB00;
+}
+.heart:hover {
+    color: #F63E02 ;
+}
+input[type="checkbox"].toggle-star{
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+     left: -9000px;
+     top: -9000px; /*scoatem checkboxul total din pagina, totusi cand dam click pe label , acesta se va activa */
+}
+input[type="checkbox"].toggle-star:checked + label {
+        font-weight: bold;
+        font-size: 0.9rem;
+        color: #F5BB00;
+    }
+input[type="checkbox"].toggle-heart:checked + label {
     font-weight: bold;
     font-size: 0.9rem;
+    color: #F63E02;
 }
+input[type="checkbox"].toggle-heart{
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+     left: -9000px;
+     top: -9000px; /*scoatem checkboxul total din pagina, totusi cand dam click pe label , acesta se va activa */
+}
+
 .cart-button {
     background-color: black;
     color: white;
     padding: 5px 22px ;
     font-weight: bold;
     margin: 0px 4px;
-    border: none;
+    border:none;
+    cursor: pointer;
+}
+.cart-button:hover {
+    background:linear-gradient(to bottom, #312F2F 5%, #201A23 100%);
+	background-color:#dfdfdf;   
+}
+.cart-button:active {
+    position:relative;
+	top:1px;
 }
 
 .view-button {
@@ -68,20 +104,35 @@ p {
     border-color: black;
     font-weight: bold;
     margin: 0px 4px;
+    cursor: pointer;
+}
+.view-button:hover { 
+    background:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+	background-color:#dfdfdf;
 }
 
-.star:hover {
-    color: #F5BB00;
-}
-.heart:hover {
-    color: #F63E02;
+.view-button:active {
+    position:relative;
+	top:1px;
 }
 @media (min-width: 764px) {
     .flex-container {
-        width: 50%;
+        margin: 5% auto;
+        width: 70%;
         height: auto;
-        justify-content: center;
+        align-items: center;
         flex-direction: row;
-        flex-wrap: nowrap;
+    }
+    .flex-item {
+        margin: 20px;
+    }
+    img {
+        height: 400px;
+    }
+    .cart-button {
+        padding: 9px 28px;
+    }
+    .view-button {
+        padding: 7px 26px;
     }
 }
