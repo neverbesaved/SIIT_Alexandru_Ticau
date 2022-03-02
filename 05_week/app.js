@@ -1,7 +1,15 @@
 function createComment(userInput){
-    let commentHTML = document.createElement("li");
-    commentHTML.setAttribute('class', 'list-element')
-    commentHTML.innerText = userInput;
+    let commentHTML = document.createElement("div");
+    commentHTML.setAttribute('class', 'comment-element');
+
+    let commentAvatar = document.createElement("img");
+    commentAvatar.src = "./images/lmaocat.jfif";
+
+    let commentParagraph = document.createElement("p");
+    commentParagraph.innerText = userInput;
+
+    let commentHeader = document.createElement("h1");
+    commentHeader.innerText = "alex.ticau2102@gmail.com"
 
     let deleteButton = document.createElement("button");
     deleteButton.type = "button";
@@ -10,24 +18,28 @@ function createComment(userInput){
     deleteButton.addEventListener('click',(event) =>{
         commentHTML.parentElement.removeChild(commentHTML);
     })
+
+    commentHTML.appendChild(commentAvatar)
+    commentHTML.appendChild(commentHeader)
+    commentHTML.appendChild(commentParagraph)
     commentHTML.appendChild(deleteButton);
 
     return commentHTML
 }
 
-const commentArray = [];
+// const commentArray = [];
 
-let ulHTML = document.createElement("ul");
-commentArray.forEach(comment => {
-    let itemHTML = createComment(comment);
-    ulHTML.appendChild(itemHTML);
-});
-document.body.appendChild(ulHTML);
+// commentArray.forEach(comment => {
+//     let itemHTML = createComment(comment);
+//     ulHTML.appendChild(itemHTML);
+// });
 
+
+let commentSection = document.getElementById("comments")
 let commentInput = document.getElementById("comment-input");
 let submitButton = document.getElementById("submit-button");
 
 submitButton.onclick = function() {
     let newItem = createComment(commentInput.value);
-    ulHTML.appendChild(newItem);
+    commentSection.appendChild(newItem);
 }
