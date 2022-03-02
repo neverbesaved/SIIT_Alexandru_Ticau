@@ -27,14 +27,6 @@ function createComment(userInput){
     return commentHTML
 }
 
-// const commentArray = [];
-
-// commentArray.forEach(comment => {
-//     let itemHTML = createComment(comment);
-//     ulHTML.appendChild(itemHTML);
-// });
-
-
 let commentSection = document.getElementById("comments")
 let commentInput = document.getElementById("comment-input");
 let submitButton = document.getElementById("submit-button");
@@ -43,3 +35,13 @@ submitButton.onclick = function() {
     let newItem = createComment(commentInput.value);
     commentSection.appendChild(newItem);
 }
+
+// Functionalitatea butonului goTop 
+const btnScrollToTop = document.getElementById("goTopButton");
+btnScrollToTop.addEventListener("click",function(){
+window.scrollTo({
+top:0,
+left:0,
+behavior:"smooth"
+});
+});
