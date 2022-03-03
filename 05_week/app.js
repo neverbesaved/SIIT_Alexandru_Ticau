@@ -26,15 +26,28 @@ function createComment(userInput){
 
     return commentHTML
 }
+const commentArray = [
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et libero ultricies, finibus ipsum in, eleifend quam. Maecenas quis tellus dictum, pulvinar nunc eget, sollicitudin mauris. ",
+    "Praesent cursus sem massa, vel pretium nulla finibus fringilla. Nam accumsan, risus pulvinar pellentesque maximus, sapien turpis auctor quam, dignissim dignissim orci tellus eu mauris. Donec malesuada eleifend mi, in laoreet ante mollis in." ,
+    "Nam quis urna velit."
+];
 
 let commentSection = document.getElementById("comments")
 let commentInput = document.getElementById("comment-input");
 let submitButton = document.getElementById("submit-button");
 
+ function displayComment(comments){
+
+    comments.forEach(comment => {
+        commentSection.appendChild(createComment(comment))
+    });
+}
 submitButton.onclick = function() {
     let newItem = createComment(commentInput.value);
     commentSection.appendChild(newItem);
 }
+
+displayComment(commentArray)
 
 // Functionalitatea butonului goTop 
 const btnScrollToTop = document.getElementById("goTopButton");
