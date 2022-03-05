@@ -1,0 +1,139 @@
+body,
+html {
+  height: 100%;
+}
+span {
+  margin-left: 10px;
+}
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: muli, sans-serif;
+}
+img {
+  width: 100%;
+  height: 300px;
+  border-radius: 3%;
+  object-fit: cover;
+}
+h2 {
+  font-size: 1.25rem;
+}
+p {
+  font-size: 0.8rem;
+  color: #545f66;
+  line-height: 1.25;
+}
+.flex-container {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+.flex-item {
+  margin: 15px auto;
+  flex-basis: 50%;
+  width: 50%;
+  text-align: center;
+}
+.icons {
+  display: flex;
+  justify-content: center;
+  margin: 0px auto;
+}
+.icon {
+  padding: 10px 20px;
+  margin: 0;
+  color: #545f66;
+}
+.star:hover {
+  color: #f5bb00;
+}
+.heart:hover {
+  color: #f63e02;
+}
+input[type="checkbox"].toggle-star {
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+  left: -9000px;
+  top: -9000px; /*scoatem checkboxul total din pagina, totusi cand dam click pe label , acesta se va activa */
+}
+input[type="checkbox"].toggle-star:checked + label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #f5bb00;
+}
+input[type="checkbox"].toggle-heart:checked + label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #f63e02;
+}
+input[type="checkbox"].toggle-heart {
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+  left: -9000px;
+  top: -9000px; /*scoatem checkboxul total din pagina, totusi cand dam click pe label , acesta se va activa */
+}
+
+.cart-button {
+  background-color: black;
+  color: white;
+  padding: 5px 22px;
+  font-weight: bold;
+  margin: 0px 4px;
+  border: none;
+  cursor: pointer;
+}
+.cart-button:hover {
+  background: linear-gradient(to bottom, #312f2f 5%, #201a23 100%);
+  background-color: #dfdfdf;
+}
+.cart-button:active {
+  position: relative;
+  top: 1px;
+}
+
+.view-button {
+  background-color: white;
+  color: black;
+  padding: 3px 20px;
+  border-color: black;
+  font-weight: bold;
+  margin: 0px 4px;
+  cursor: pointer;
+}
+.view-button:hover {
+  background: linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+  background-color: #dfdfdf;
+}
+
+.view-button:active {
+  position: relative;
+  top: 1px;
+}
+@media (min-width: 764px) {
+  .flex-container {
+    margin: 5% auto;
+    width: 70%;
+    height: auto;
+    align-items: center;
+    flex-direction: row;
+  }
+  .flex-item {
+    margin: 20px;
+  }
+  img {
+    height: 400px;
+  }
+  .cart-button {
+    padding: 9px 28px;
+  }
+  .view-button {
+    padding: 7px 26px;
+  }
+}
