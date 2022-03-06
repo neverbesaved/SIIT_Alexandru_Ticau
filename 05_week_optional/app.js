@@ -51,7 +51,17 @@ function displayBMI(bmi) {
   bmiWindow.appendChild(bmiImage);
   bmiWindow.appendChild(bmiValue);
   bmiWindow.appendChild(bmiConclusion);
-  bmiWindow.appendChild(resetButton)
+  bmiWindow.appendChild(resetButton);
 
   return bmiWindow;
+}
+
+let bmiMain = document.getElementById("main-window");
+let weightInput = document.getElementById("weight-input");
+let heightInput = document.getElementById("height-input");
+let submitButton = document.getElementById("submit-button");
+
+submitButton.onclick = function() {
+    let newItem = displayBMI(calculateBMI(weightInput.value,heightInput.value));
+    bmiMain.appendChild(newItem);
 }
