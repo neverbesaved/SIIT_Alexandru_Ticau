@@ -46,6 +46,7 @@ function displayBMI(bmi) {
   resetButton.setAttribute('class', 'reset-button')
   resetButton.addEventListener('click',(event) =>{
       bmiWindow.parentElement.removeChild(bmiWindow);
+      inputField.classList.remove("hidden");
   })
 
   bmiWindow.appendChild(bmiImage);
@@ -60,8 +61,10 @@ let bmiMain = document.getElementById("main-window");
 let weightInput = document.getElementById("weight-input");
 let heightInput = document.getElementById("height-input");
 let submitButton = document.getElementById("submit-button");
+let inputField = document.getElementById("bmi-view")
 
 submitButton.onclick = function() {
     let newItem = displayBMI(calculateBMI(weightInput.value,heightInput.value));
     bmiMain.appendChild(newItem);
+    inputField.classList.add("hidden");
 }
