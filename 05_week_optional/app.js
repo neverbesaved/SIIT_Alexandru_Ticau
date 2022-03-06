@@ -5,7 +5,7 @@ function calculateBMI(weight, height) {
     convertedHeight = height;
   }
   let bmi = weight / (convertedHeight * convertedHeight);
-  return bmi;
+  return Math.round(bmi * 100) / 100;
 }
 
 function displayBMI(bmi) {
@@ -29,7 +29,7 @@ function displayBMI(bmi) {
     bmiImage.src = "./images/overweight.jpg";
 
     var bmiConclusion = document.createElement("p");
-    bmiConclusion.innerText="Your bmi index is within the overweight range. Practice sport and exclude junk food please."
+    bmiConclusion.innerText="Your bmi index is within the overweight range. Practice sport and exclude junk food."
   } else {
     var bmiImage = document.createElement("img");
     bmiImage.src = "./images/obese.jpg";
