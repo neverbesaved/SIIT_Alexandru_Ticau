@@ -2,6 +2,9 @@ body,
 html {
   height: 100%;
 }
+main {
+    flex: 1 0 auto;
+}
 body {
     margin: 0;
     box-sizing: border-box;
@@ -14,6 +17,7 @@ header {
     padding: 15px 10px 30px 10px; 
     background-color: #001524;
     color: white;
+    flex-shrink: 0;
 }
 h1 { 
     margin:0;
@@ -99,7 +103,10 @@ img {
         position:relative;
         top:1px;
     }
-
+    #github-logo { 
+        height: 64px;
+        width: 64px;
+    }
 @media (min-width: 764px) { 
     #bmi-view {
         flex-direction: row;
@@ -123,5 +130,6 @@ img {
     }
     .container { 
         height: 100%;
+        margin-top:0;
     }
 }
