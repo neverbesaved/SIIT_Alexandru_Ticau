@@ -12,7 +12,7 @@ function displayBMI(bmi) {
   let bmiWindow = document.createElement("div");
   bmiWindow.setAttribute("class", "bmi-window");
 
-  if (bmi < 18.5) {
+  if (bmi < 18.5 && bmi>=0) {
     var bmiImage = document.createElement("img");
     bmiImage.src = "./images/underweight.png";
 
@@ -30,12 +30,18 @@ function displayBMI(bmi) {
 
     var bmiConclusion = document.createElement("p");
     bmiConclusion.innerText="Your bmi index is within the overweight range. Practice sport and exclude junk food."
-  } else {
+  } else if(bmi>=30) {
     var bmiImage = document.createElement("img");
     bmiImage.src = "./images/obese.jpg";
 
     var bmiConclusion = document.createElement("p");
     bmiConclusion.innerText="Your bmi index is within the obese range. For your own health's sake - start doing physical activities and change alimentation routine "
+  } else { 
+    var bmiImage = document.createElement("img");
+    bmiImage.src = "./images/error.jpg";
+
+    var bmiConclusion = document.createElement("p");
+    bmiConclusion.innerText="An error occured, please try again "
   }
   let bmiValue = document.createElement("h2");
   bmiValue.innerText=bmi;
