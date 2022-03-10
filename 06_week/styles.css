@@ -10,15 +10,10 @@ body {
     height: 500px;
     margin: 10% auto;
     border: 1px solid black;
-    position: relative;
-}
+}   
 #player {
     width: 25px;
     height: 25px;
     background-color: rebeccapurple;
-    position: absolute;
-    top: 250px;
-    bottom: 0;
-    left: 250px;
-    right: 0;
+    position: relative;
 }
