@@ -1,39 +1,50 @@
 const player = document.getElementById("player");
+const playground = document.getElementById("game-container")
+var Player = {x:0,y:0};
+
 document.addEventListener("keydown", function (event) {
-  movementFunction(event.key);
+  keydownListener(event.key)
 });
 
-function movementFunction(key) {
-  let oldTop = parseInt(player.style.top);
-  let oldBot = parseInt(player.style.bottom);
-  let oldRight = parseInt(player.style.right);
-  let oldLeft = parseInt(player.style.left);
+function isPlayerInsideDiv(x,y){
+  if(x<0 || playground.offsetWidth -20 < x){
+    return false;
+  }
+  if(y<0 || playground.offsetHeight-20 < y){
+    return false;
+  }
+  return true;
+}
+function keydownListener(key) {
+  console.log(key)
+  let x = Player.x;
+  let y = Player.y;
   switch (key) {
     case "ArrowUp":
-      if(oldTop!==0 && oldBot!==0){
-        player.style.bottom = `${oldBot + 5}px`;
-        player.style.top = `${oldTop - 5}px`;
-        break;
-      }
-    case "ArrowLeft": 
-    if(oldRight!==0 && oldLeft!==0){
-      player.style.right = `${oldRight +   5}px`;
-      player.style.left = `${oldLeft - 5}px`;
+      y-=20;
       break;
-    }
+    case "ArrowLeft":
+      x-=20;
+      break; 
     case "ArrowDown":
-      if(oldTop<475 && oldBot>-475){
-      player.style.top = `${oldTop + 5}px`;
-      player.style.bottom = `${oldBot - 5}px`;
+      y+=20;
       break;
-    }
     case "ArrowRight":
-      if(oldRight>-975 && oldLeft<975){
-      player.style.left = `${oldLeft + 5}px`;
-      player.style.right = `${oldRight - 5}px`;
+      x+=20;
       break;
-  }
     default:
       console.log("Input is not valid");
   }
+  movePlayer(x,y);
 }
+function movePlayer(x,y){
+  if(!isPlayerInsideDiv(x,y)){
+    return;
+  }
+  Player.x=x || 0;  // Daca x are o valoare (e definit), atunci primeste valoarea lui , in caz contrar e 0
+  Player.y=y || 0;
+
+  player.style.left= `${Player.x}px`;
+  player.style.top= `${Player.y}px`;
+}
+
