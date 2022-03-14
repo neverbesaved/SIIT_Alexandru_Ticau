@@ -30,7 +30,7 @@ function createPlayground() {
   document.body.appendChild(playground);
 }
 
-let numberOfObstacles = Math.floor(Math.random() * 15 + 5);
+let numberOfObstacles = Math.floor(Math.random() * 30 + 10);
 console.log(numberOfObstacles);
 for (i = 0; i < numberOfObstacles; i++) {
   createObstacles();
@@ -55,6 +55,7 @@ function createObstacles() {
     console.log("Obstacle is spawning outside the playground , skipping ... ");
   }
 }
+
 
 function isPlayerInsideDiv(x, y) {
   if (x < 0 || playground.offsetWidth - 20 < x) {
