@@ -12,9 +12,6 @@ document.addEventListener("keydown", function (event) {
   keydownListener(event.key);
 });
 
-submitButton.onclick = function () {
-    startGame();
-};
 function createPlayground(){
 
   // 1. cream playground-ul
@@ -31,19 +28,19 @@ function createPlayground(){
   playground.appendChild(ourPlayer)
 
   // 3. cream numar random de obstacole , cu pozitii si dimensiuni random si le introducem pe playground
-  let numberOfObstacles = Math.floor(Math.random() * 15);
+  let numberOfObstacles = Math.floor(Math.random() * 15 +5);
   console.log(numberOfObstacles)
   for(i=0;i<numberOfObstacles;i++){
-  let width = Math.floor(Math.random()*70)
-  let height = Math.floor(Math.random()*70)
+  let width = Math.floor(Math.random()*70+10)
+  let height = Math.floor(Math.random()*70+10)
   let obstaclePosX = Math.floor(Math.random() * 980);
   let obstaclePosY = Math.floor(Math.random() * 480);
   let obstacle = document.createElement("div");
   obstacle.setAttribute("class", "obstacle");
-  obstacle.setAttribute("left", `${obstaclePosX}px`);
-  obstacle.setAttribute("top", `${obstaclePosY}px`);
-  obstacle.setAttribute("width", `${width}px`);
-  obstacle.setAttribute("height", `${height}px`);
+  obstacle.style.left = `${obstaclePosX}px`;
+  obstacle.style.top = `${obstaclePosY}px`;
+  obstacle.style.width = `${width}px`;
+  obstacle.style.height = `${height}px`;
   playground.appendChild(obstacle);
   }
   document.body.appendChild(playground);
@@ -57,6 +54,16 @@ function isPlayerInsideDiv(x, y) {
     return false;
   }
   return true;
+}
+
+function isObstacleInsideDiv(x,y, height, width) {
+  if(x <0 || playground.offsetWidth - width < x ) {
+    return false;
+  }
+  if( y<0 || playground.offsetHeight - height < y) {
+    return false;
+  }
+  return true
 }
 function keydownListener(key) {
   console.log(key);
