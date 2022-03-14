@@ -4,8 +4,15 @@ body,html {
 body {
     box-sizing: border-box;
     margin: 0;
-    background-color: #388697;
+    background-color: #011F3F;
     z-index:2;
+}
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2rem;
+    color: #FEF2BF;
 }
 #game-container {
     width: 1005px;
@@ -14,7 +21,8 @@ body {
     border: 1px solid black;
     z-index: 0;
     position: relative;
-    background-color: #B5FFE1;
+    background-image: url('grass.jpg');
+    background-size: cover;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     z-index:0;
 }   
@@ -23,6 +31,7 @@ body {
     background-image: url('brick.jpg');
     position: absolute;
     background-size: cover;
+    border: 1px solid black;
 }
 .hidden {
     display: none !important;
