@@ -1,6 +1,7 @@
 function calculateBMI(weight, height) {
+  let convertedHeight =0;
   if (height > 3) {
-    var convertedHeight = height * 0.01;
+    convertedHeight = height * 0.01;
   } else {
     convertedHeight = height;
   }
