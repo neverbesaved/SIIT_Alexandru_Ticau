@@ -27,24 +27,35 @@ function createPlayground() {
   // Player.y = posY;
   playground.appendChild(ourPlayer);
 
-  // 3. cream numar random de obstacole , cu pozitii si dimensiuni random si le introducem pe playground
-  let numberOfObstacles = Math.floor(Math.random() * 15 + 5);
-  console.log(numberOfObstacles);
-  for (i = 0; i < numberOfObstacles; i++) {
-    let width = Math.floor(Math.random() * 70 + 10);
-    let height = Math.floor(Math.random() * 70 + 10);
-    let obstaclePosX = Math.floor(Math.random() * 980);
-    let obstaclePosY = Math.floor(Math.random() * 480);
-    let obstacle = document.createElement("div");
-    obstacle.setAttribute("class", "obstacle");
-    obstacle.style.left = `${obstaclePosX}px`;
-    obstacle.style.top = `${obstaclePosY}px`;
-    obstacle.style.width = `${width}px`;
-    obstacle.style.height = `${height}px`;
-    playground.appendChild(obstacle);
-  }
   document.body.appendChild(playground);
 }
+
+let numberOfObstacles = Math.floor(Math.random() * 15 + 5);
+console.log(numberOfObstacles);
+for (i = 0; i < numberOfObstacles; i++) {
+  createObstacles();
+}
+
+// 3. cream numar random de obstacole , cu pozitii si dimensiuni random si le introducem pe playground
+function createObstacles() {
+  let width = Math.floor(Math.random() * 70 + 10);
+  let height = Math.floor(Math.random() * 70 + 10);
+  let obstaclePosX = Math.floor(Math.random() * 980);
+  let obstaclePosY = Math.floor(Math.random() * 480);
+
+  let obstacle = document.createElement("div");
+  obstacle.setAttribute("class", "obstacle");
+  obstacle.style.left = `${obstaclePosX}px`;
+  obstacle.style.top = `${obstaclePosY}px`;
+  obstacle.style.width = `${width}px`;
+  obstacle.style.height = `${height}px`;
+  if (isObstacleInsideDiv(obstaclePosX, obstaclePosY, height, width)) {
+    playground.appendChild(obstacle);
+  } else {
+    console.log("Obstacle is spawning outside the playground , skipping ... ");
+  }
+}
+
 function isPlayerInsideDiv(x, y) {
   if (x < 0 || playground.offsetWidth - 20 < x) {
     return false;
