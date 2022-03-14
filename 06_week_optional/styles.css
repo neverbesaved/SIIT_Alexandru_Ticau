@@ -1,0 +1,57 @@
+body,
+html {
+  height: 100%;
+}
+body {
+  box-sizing: border-box;
+  margin: 0;
+  background-color: #011f3f;
+  z-index: 2;
+}
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 2rem;
+  color: #fef2bf;
+}
+#game-container {
+  width: 1005px;
+  height: 505px;
+  margin: 5% auto;
+  border: 1px solid black;
+  z-index: 0;
+  position: relative;
+  background-image: url("grass.jpg");
+  background-size: cover;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 0;
+}
+.obstacle {
+  z-index: 1;
+  background-image: url("brick.jpg");
+  position: absolute;
+  background-size: cover;
+  border: 1px solid black;
+}
+.hidden {
+  display: none !important;
+}
+#player {
+  width: 25px;
+  height: 25px;
+  background-image: url("player.png");
+  position: absolute;
+  z-index: 2;
+}
+#player-stat { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  color: red;
+  margin-top: 25px;
+}
+.fa-heart { 
+  margin: 0 8px;
+}
