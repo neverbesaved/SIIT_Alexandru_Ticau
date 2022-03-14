@@ -1,17 +1,17 @@
 function createComment(userInput){
-    let commentHTML = document.createElement("div");
+    const commentHTML = document.createElement("div");
     commentHTML.setAttribute('class', 'comment-element');
 
-    let commentAvatar = document.createElement("img");
+    const commentAvatar = document.createElement("img");
     commentAvatar.src = "./images/lmaocat.jfif";
 
-    let commentParagraph = document.createElement("p");
+    const commentParagraph = document.createElement("p");
     commentParagraph.innerText = userInput;
 
-    let commentHeader = document.createElement("h1");
+    const commentHeader = document.createElement("h1");
     commentHeader.innerText = "alex.ticau2102@gmail.com"
 
-    let deleteButton = document.createElement("button");
+    const deleteButton = document.createElement("button");
     deleteButton.type = "button";
     deleteButton.textContent = "Delete";
     deleteButton.setAttribute('class', 'delete-button')
@@ -32,9 +32,9 @@ const commentArray = [
     "Nam quis urna velit."
 ];
 
-let commentSection = document.getElementById("comments")
-let commentInput = document.getElementById("comment-input");
-let submitButton = document.getElementById("submit-button");
+const commentSection = document.getElementById("comments")
+const commentInput = document.getElementById("comment-input");
+const submitButton = document.getElementById("submit-button");
 
  function displayComment(comments){
 
