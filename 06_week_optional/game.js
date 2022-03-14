@@ -1,13 +1,25 @@
 createPlayground();
 
-var player = document.getElementById("player");
-var playground = document.getElementById("game-container");
-var submitButton = document.getElementById("submit-button");
-var inputs = document.getElementsByClassName("input-item");
-var Player = { x: 0, y: 0 };
+let player = document.getElementById("player");
+let playground = document.getElementById("game-container");
+let submitButton = document.getElementById("submit-button");
+let inputs = document.getElementsByClassName("input-item");
+let Player = { x: 0, y: 0 };
+let restartButton = document.getElementById("restart-button");
+
 
 document.addEventListener("keydown", function (event) {
   keydownListener(event.key);
+});
+
+restartButton.addEventListener("click", (event) => {
+ playground.parentElement.removeChild(playground);
+ createPlayground();
+ let numberOfObstacles = Math.floor(Math.random() * 30 + 10);
+console.log(numberOfObstacles);
+for (i = 0; i < numberOfObstacles; i++) {
+  createObstacles();
+}
 });
 
 function createPlayground() {
