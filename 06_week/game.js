@@ -1,5 +1,4 @@
-
-createPlayground()
+createPlayground();
 
 var player = document.getElementById("player");
 var playground = document.getElementById("game-container");
@@ -21,7 +20,6 @@ function createPlayground(){
   // 1. cream playground-ul
   let playground = document.createElement("div");
   playground.setAttribute("id","game-container")
-  document.body.appendChild(playground);
 
   // 2. cream playerul cu o pozitie random(?) si il adaugam in playground
   let posX = Math.floor(Math.random() * 980);
@@ -48,6 +46,7 @@ function createPlayground(){
   obstacle.setAttribute("height", `${height}px`);
   playground.appendChild(obstacle);
   }
+  document.body.appendChild(playground);
   
 }
 function isPlayerInsideDiv(x, y) {
@@ -92,13 +91,3 @@ function movePlayer(x, y) {
   player.style.top = `${Player.y}px`;
 }
 
-
-
-
-
-function startGame(){
-  for(i=0;i<inputs.length;i++){
-    inputs[i].classList.add("hidden")
-    createPlayground();
-  }
-}
