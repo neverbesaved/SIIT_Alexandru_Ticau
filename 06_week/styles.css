@@ -18,7 +18,7 @@ h1 {
 #game-container {
   width: 1005px;
   height: 505px;
-  margin: 10% auto;
+  margin: 5% auto;
   border: 1px solid black;
   z-index: 0;
   position: relative;
