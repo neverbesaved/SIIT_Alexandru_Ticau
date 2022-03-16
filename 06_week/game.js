@@ -7,19 +7,18 @@ let inputs = document.getElementsByClassName("input-item");
 let Player = { x: 0, y: 0 };
 let restartButton = document.getElementById("restart-button");
 
-
 document.addEventListener("keydown", function (event) {
   keydownListener(event.key);
 });
 
 restartButton.addEventListener("click", (event) => {
- playground.parentElement.removeChild(playground);
- createPlayground();
- let numberOfObstacles = Math.floor(Math.random() * 30 + 10);
-console.log(numberOfObstacles);
-for (i = 0; i < numberOfObstacles; i++) {
-  createObstacles();
-}
+  playground.parentElement.removeChild(playground);
+  createPlayground();
+  let numberOfObstacles = Math.floor(Math.random() * 30 + 10);
+  console.log(numberOfObstacles);
+  for (i = 0; i < numberOfObstacles; i++) {
+    createObstacles();
+  }
 });
 
 function createPlayground() {
@@ -67,7 +66,6 @@ function createObstacles() {
     console.log("Obstacle is spawning outside the playground , skipping ... ");
   }
 }
-
 
 function isPlayerInsideDiv(x, y) {
   if (x < 0 || playground.offsetWidth - 20 < x) {
