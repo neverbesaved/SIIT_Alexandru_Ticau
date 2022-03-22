@@ -5,6 +5,7 @@ const saveButton = document.getElementById("save-button")
 const secondsHTML = document.getElementById("seconds");
 const minutesHTML = document.getElementById("minutes");
 const hoursHTML = document.getElementById("hours");
+const section = document.querySelector("section")
 
 function startTimer(){
   let seconds = parseInt(secondsHTML.innerText); 
@@ -46,12 +47,12 @@ function saveTimer(){
   let hours = parseInt(hoursHTML.innerText); 
   const timerHtml = document.createElement('div');
   timerHtml.innerHTML = `
-      <span id="hour">${addZero(hours)}</span> :
-      <span id="minute">${addZero(minutes)}</span> :
+      <span id="hour">${addZero(hours)}</span> <span>:</span>
+      <span id="minute">${addZero(minutes)}</span> <span>:</span>
       <span id="second">${addZero(seconds)}</span>
   `
-  timerHtml.setAttribute("class","timer")
-  document.body.appendChild(timerHtml);
+  timerHtml.setAttribute("class","saved-timer")
+  section.appendChild(timerHtml);
 }
 
 function addZero(value) {
