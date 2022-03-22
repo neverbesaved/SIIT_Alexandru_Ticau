@@ -12,10 +12,12 @@
         <span id="hours">00</span> :
         <span id="minutes">00</span> :
         <span id="seconds">00</span>
-        <button id="start-button">Start</button>
-        <button id="stop-button">Stop</button>
-        <button id="reset-button">Reset</button>
-        <button id="save-button">Save</button>
+        <div class="timer-buttons">
+        <button id="start-button" onclick="startTimer()">Start</button>
+        <button id="stop-button" onclick="stopTimer()">Stop</button>
+        <button id="reset-button" onclick="resetTimer()">Reset</button>
+        <button id="save-button" onclick="saveTimer()">Save</button>
+    </div>
     </div>
     <script src="./app.js"></script>
 </body>
