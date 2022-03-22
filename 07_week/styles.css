@@ -5,7 +5,107 @@ html {
 body {
   box-sizing: border-box;
   margin: 0;
+  background-color: #0096c7;
 }
-.timer {
-    margin: 50px auto;
+button{
+    display: inline-block;
+    margin: 0 5px;
+}
+span {
+    font-size: 5rem;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+    margin: 60px auto;
+    padding: 75px;
+    background-color: #ade8f4;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.timer-buttons{
+    margin-top: 35px;
+}
+#start-button { 
+	background-color:#44c767;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:8px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#start-button:hover {
+	background-color:#5cbf2a;
+}
+#start-button:active {
+	position:relative;
+	top:1px;
+}
+#stop-button { 
+	background-color:#F05365;
+	border-radius:28px;
+	border:1px solid #BC4B51;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:8px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#stop-button:hover {
+	background-color:#BC4B51;
+}
+#stop-button:active {
+	position:relative;
+	top:1px;
+}
+#reset-button { 
+	background-color:#F4A259;
+	border-radius:28px;
+	border:1px solid #BC4B51;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:8px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#reset-button:hover {
+	background-color:#FF4A1C;
+}
+#reset-button:active {
+	position:relative;
+	top:1px;
+}
+#save-button { 
+	background-color:#0E34A0;
+	border-radius:28px;
+	border:1px solid #2F3061;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:8px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#save-button:hover {
+	background-color:#102542;
+}
+#save-button:active {
+	position:relative;
+	top:1px;
 }
