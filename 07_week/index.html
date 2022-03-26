@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Timer</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <section>
+      <div class="shadow"></div>
+      <div class="bowl">
+        <div class="liquid"></div>
+      </div>
+      <div class="timer">
+        <span id="hours">00</span> <span>:</span> <span id="minutes">00</span>
+        <span>:</span>
+        <span id="seconds">00</span>
+      </div>
+      <div class="timer-buttons">
+        <button id="start-button" onclick="startTimer()">Start</button>
+        <button id="stop-button" onclick="stopTimer()">Stop</button>
+        <button id="reset-button" onclick="resetTimer()">Reset</button>
+        <button id="save-button" onclick="saveTimer()">Save</button>
+      </div>
+    </section>
+    <script src="./app.js"></script>
+  </body>
+</html>
