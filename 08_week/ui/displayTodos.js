@@ -10,6 +10,9 @@ async function displayTodos() {
     const itemHTML = createTodo(todo.name, todo.id);
     const deleteBtn = getDeleteButton(todo.id);
     const checkbox = getCheckboxTodo(todo.id);
+    if(todo.completed === "true"){
+      checkbox.setAttribute("checked")
+    }
     itemHTML.appendChild(checkbox);
     itemHTML.appendChild(deleteBtn);
     ulHTML.appendChild(itemHTML);
