@@ -7,9 +7,9 @@ const toDoButton = document.getElementById("todo-button");
 toDoButton.onclick = async function () {
   const newTodo = {
     name: toDoInput.value,
-    completed: false
-  }
+    completed: false,
+  };
 
-  await createToDoServer(newTodo)
+  await createToDoServer(newTodo);
   location.reload();
-}
+};
