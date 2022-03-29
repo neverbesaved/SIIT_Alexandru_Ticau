@@ -4,7 +4,6 @@ import { Low, JSONFile } from 'lowdb'
 import bodyParser from 'koa-bodyparser';
 import cors from '@koa/cors';
 
-
 const app = new Koa();
 const router = new Router();
 const adapter = new JSONFile('db.json')

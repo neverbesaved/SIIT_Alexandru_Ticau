@@ -3,6 +3,8 @@ import createTodo from "./createTodo.js";
 import getDeleteButton from "../removeTodo.js";
 import getCheckboxTodo from "../checkTodo.js";
 
+const container = document.getElementById("container")
+
 async function displayTodos() {
   const todos = await getTodos();
   const ulHTML = document.createElement("ul");
@@ -19,7 +21,7 @@ async function displayTodos() {
     itemHTML.appendChild(deleteBtn);
     ulHTML.appendChild(itemHTML);
   });
-  document.body.appendChild(ulHTML);
+  container.appendChild(ulHTML);
 }
 
 export default displayTodos;
