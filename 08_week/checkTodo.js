@@ -1,6 +1,6 @@
-import { baseUrl, createToDoServer } from "./api.js";
+import { baseUrl} from "./api.js";
 
-function getCheckboxTodo(todoId) {
+  function getCheckboxTodo(todoId) {
   const checkbox = document.createElement("input");
   const updateCheckbox = {
     completed: true,

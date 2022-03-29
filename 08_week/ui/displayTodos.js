@@ -1,25 +1,25 @@
-import getTodos from "../api.js"
-import createTodo from "./createTodo.js"
-import getDeleteButton from "../removeTodo.js"
-import getCheckboxTodo from "../checkTodo.js"
+import getTodos from "../api.js";
+import createTodo from "./createTodo.js";
+import getDeleteButton from "../removeTodo.js";
+import getCheckboxTodo from "../checkTodo.js";
 
 async function displayTodos() {
-  const todos = await getTodos()
+  const todos = await getTodos();
   const ulHTML = document.createElement("ul");
- todos.forEach(todo => {
+  todos.forEach((todo) => {
     const itemHTML = createTodo(todo.name, todo.id);
     const deleteBtn = getDeleteButton(todo.id);
     const checkbox = getCheckboxTodo(todo.id);
-    // if(todo.completed === "true"){
-    //   checkbox.checked = true;
-    // } else {
-    //   checkbox.checked = false;
-    // }
+    if(todo.completed == true){
+      checkbox.checked = true;
+    } else {
+      checkbox.checked = false;
+    }
     itemHTML.appendChild(checkbox);
     itemHTML.appendChild(deleteBtn);
     ulHTML.appendChild(itemHTML);
   });
-  document.body.appendChild(ulHTML)
+  document.body.appendChild(ulHTML);
 }
 
 export default displayTodos;
