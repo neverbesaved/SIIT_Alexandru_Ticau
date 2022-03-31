@@ -3,6 +3,7 @@ const playerPlayground = document.getElementById("player-window");
 
 const winnerAnnouncer = (computer, player) => {
   let result = "";
+  const resultHTML = document.createElement("p");
   if (computer === player) {
     result = "It's a Draw !";
   } else if (computer === "Paper" && player === "Scissors") {
@@ -18,7 +19,8 @@ const winnerAnnouncer = (computer, player) => {
   } else if (computer === "Scissors" && player === "Rock") {
     result = "Player wins !";
   }
-  return result;
+  resultHTML.innerText = result;
+  return resultHTML;
 };
 
 export default winnerAnnouncer;
