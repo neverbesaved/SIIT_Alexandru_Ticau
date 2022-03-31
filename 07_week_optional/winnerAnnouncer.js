@@ -1,7 +1,6 @@
 const computerPlayground = document.getElementById("computer-window");
 const playerPlayground = document.getElementById("player-window");
 
-
 const winnerAnnouncer = (computer, player) => {
   let result = "";
   if (computer === player) {
@@ -22,4 +21,4 @@ const winnerAnnouncer = (computer, player) => {
   return result;
 };
 
-export default winnerAnnouncer
+export default winnerAnnouncer;
