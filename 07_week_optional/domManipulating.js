@@ -3,6 +3,7 @@ export const playerPlayground = document.getElementById("player-window");
 
 export const displayChoice = (choice, target) => {
   const result = document.createElement("img");
+  result.setAttribute("class","player-choice")
   switch (choice) {
     case "Rock":
       result.src = "./images/rock.jpg";
