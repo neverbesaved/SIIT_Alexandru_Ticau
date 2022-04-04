@@ -1,10 +1,13 @@
-import { baseUrl} from "./api.js";
+import { baseUrl } from "./api.js";
+import { todosArray } from "./ui/displayTodos.js";
 
-  function getCheckboxTodo(todoId) {
+function getCheckboxTodo(todoId) {
+  console.log(todosArray);
+  const result = todosArray.find(({ id }) => id === todoId);
+  let resultObject = {
+    completed: !result.completed
+  }
   const checkbox = document.createElement("input");
-  const updateCheckbox = {
-    completed: true,
-  };
   checkbox.setAttribute("type", "checkbox");
   checkbox.addEventListener("click", async () => {
     await fetch(`${baseUrl}/todos/${todoId}`, {
@@ -12,7 +15,7 @@ import { baseUrl} from "./api.js";
       headers: {
         "Content-Type": "application/json", // ii spunem la server ca trimitem json
       },
-      body: JSON.stringify(updateCheckbox),
+      body: JSON.stringify(resultObject),
     });
     location.reload();
   });

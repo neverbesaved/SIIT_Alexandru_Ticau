@@ -3,12 +3,14 @@ import createTodo from "./createTodo.js";
 import getDeleteButton from "../removeTodo.js";
 import getCheckboxTodo from "../checkTodo.js";
 
+const todosArray = [];
 const container = document.getElementById("container")
 
 async function displayTodos() {
   const todos = await getTodos();
   const ulHTML = document.createElement("ul");
   todos.forEach((todo) => {
+    todosArray.push(todo);
     const itemHTML = createTodo(todo.name, todo.id);
     const deleteBtn = getDeleteButton(todo.id);
     const checkbox = getCheckboxTodo(todo.id);
@@ -24,4 +26,5 @@ async function displayTodos() {
   container.appendChild(ulHTML);
 }
 
+export {todosArray};
 export default displayTodos;
