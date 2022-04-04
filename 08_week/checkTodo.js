@@ -5,8 +5,8 @@ function getCheckboxTodo(todoId) {
   console.log(todosArray);
   const result = todosArray.find(({ id }) => id === todoId);
   let resultObject = {
-    completed: !result.completed
-  }
+    completed: !result.completed,
+  };
   const checkbox = document.createElement("input");
   checkbox.setAttribute("type", "checkbox");
   checkbox.addEventListener("click", async () => {

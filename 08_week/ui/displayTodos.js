@@ -4,7 +4,7 @@ import getDeleteButton from "../removeTodo.js";
 import getCheckboxTodo from "../checkTodo.js";
 
 const todosArray = [];
-const container = document.getElementById("container")
+const container = document.getElementById("container");
 
 async function displayTodos() {
   const todos = await getTodos();
@@ -14,7 +14,7 @@ async function displayTodos() {
     const itemHTML = createTodo(todo.name, todo.id);
     const deleteBtn = getDeleteButton(todo.id);
     const checkbox = getCheckboxTodo(todo.id);
-    if(todo.completed == true){
+    if (todo.completed == true) {
       checkbox.checked = true;
     } else {
       checkbox.checked = false;
@@ -26,5 +26,5 @@ async function displayTodos() {
   container.appendChild(ulHTML);
 }
 
-export {todosArray};
+export { todosArray };
 export default displayTodos;
