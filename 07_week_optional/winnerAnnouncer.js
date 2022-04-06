@@ -1,4 +1,4 @@
-import restartGame from "./restartGame.js";
+
 
 const computerPlayground = document.getElementById("computer-window");
 const playerPlayground = document.getElementById("player-window");
@@ -6,9 +6,7 @@ const playerPlayground = document.getElementById("player-window");
 const winnerAnnouncer = (computer, player) => {
   let result = "";
   const paragraphHTML = document.createElement("p");
-  const restartButton = document.createElement("button");
-  restartButton.setAttribute("class","restart-button");
-  restartButton.innerHTML = "restart"
+  paragraphHTML.setAttribute("id","announcer")
   if (computer === player) {
     result = "It's a Draw !";
   } else if (computer === "Paper" && player === "Scissors") {
@@ -25,10 +23,7 @@ const winnerAnnouncer = (computer, player) => {
     result = "Player wins !";
   }
   paragraphHTML.innerText = result;
-  restartButton.addEventListener("click", restartGame())
-  return {
-    paragraphHTML, restartButton
-  }
+  return paragraphHTML
 };
 
 export default winnerAnnouncer;

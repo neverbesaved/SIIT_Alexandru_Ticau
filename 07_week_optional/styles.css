@@ -4,13 +4,16 @@
   box-sizing: border-box;
 }
 img {
-  width: 125px;
+  width: 75%;
 }
 h1 {
   text-align: center;
 }
 h2 {
   margin-top: 30px;
+}
+p { 
+  font-size: 3rem;
 }
 #game-window {
   display: flex;
@@ -31,6 +34,10 @@ h2 {
 #game-result {
   flex-basis: 33%;
   border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 #player-choice {
   display: flex;
@@ -40,25 +47,5 @@ h2 {
 .item {
   margin: 0 15px;
   border: 1px solid black;
+  width: 125px;
 }
-.restart-button { 
-    box-shadow:inset 0px 39px 0px -24px #e67a73;
-    background-color:#e4685d;
-    border-radius:4px;
-    border:1px solid #ffffff;
-    display:inline-block;
-    cursor:pointer;
-    color:#ffffff;
-    font-family:Arial;
-    font-size:15px;
-    padding:6px 15px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #b23e35;
-  }
-  .restart-button:hover {
-    background-color:#eb675e;
-  }
-  .restart-button:active {
-    position:relative;
-    top:1px;
-  }
