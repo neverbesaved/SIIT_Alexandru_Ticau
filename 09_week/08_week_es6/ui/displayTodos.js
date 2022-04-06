@@ -6,7 +6,7 @@ import getCheckboxTodo from "../checkTodo.js";
 const todosArray = [];
 const container = document.getElementById("container");
 
-async function displayTodos() {
+const displayTodos = async () => {
   const todos = await getTodos();
   const ulHTML = document.createElement("ul");
   todos.forEach((todo) => {
@@ -24,7 +24,7 @@ async function displayTodos() {
     ulHTML.appendChild(itemHTML);
   });
   container.appendChild(ulHTML);
-}
+};
 
 export { todosArray };
 export default displayTodos;

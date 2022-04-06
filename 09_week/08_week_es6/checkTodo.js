@@ -1,8 +1,7 @@
 import { baseUrl } from "./api.js";
 import { todosArray } from "./ui/displayTodos.js";
 
-function getCheckboxTodo(todoId) {
-  console.log(todosArray);
+const getCheckboxTodo = (todoId) => {
   const result = todosArray.find(({ id }) => id === todoId);
   let resultObject = {
     completed: !result.completed,
@@ -20,6 +19,6 @@ function getCheckboxTodo(todoId) {
     location.reload();
   });
   return checkbox;
-}
+};
 
 export default getCheckboxTodo;

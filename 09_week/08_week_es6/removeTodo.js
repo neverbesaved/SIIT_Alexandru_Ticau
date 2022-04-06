@@ -1,11 +1,11 @@
 import { baseUrl } from "./api.js";
 
-function getDeleteButton(todoId) {
+const getDeleteButton = (todoId) => {
   const deleteButton = document.createElement("button");
   deleteButton.setAttribute("class", "delete-button");
   deleteButton.innerHTML = "delete";
 
-  deleteButton.addEventListener("click", async function () {
+  deleteButton.addEventListener("click", async () => {
     await fetch(`${baseUrl}/todos/${todoId}`, {
       method: "DELETE",
     });
@@ -13,6 +13,6 @@ function getDeleteButton(todoId) {
   });
 
   return deleteButton;
-}
+};
 
 export default getDeleteButton;
