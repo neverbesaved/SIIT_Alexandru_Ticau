@@ -76,6 +76,8 @@ function loseHeart() {
     const player = new Player(gameContainer);
     playerHTML = document.getElementById("player");
     document.addEventListener("keydown", (eventKeydown) => {
+      //  Daca exista o varianta mai buna de a innoi event listener-ul dupa ce stergem si adaugam din nou elementul , as fi bucuros
+      // sa o stiu :D , e repetitiv codul si nu-mi place nici mie :)
       switch (eventKeydown.key) {
         case "ArrowDown":
           player.moveDown();

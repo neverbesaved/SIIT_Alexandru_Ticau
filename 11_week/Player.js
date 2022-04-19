@@ -1,9 +1,9 @@
-import ElementMove from './ElementMove.js';
+import ElementMove from "./ElementMove.js";
 
 class Player extends ElementMove {
   static createElement() {
     let player = document.createElement("div");
-    player.setAttribute("id","player");
+    player.setAttribute("id", "player");
     player.style.top = "0px";
     player.style.left = "0px";
 
