@@ -41,7 +41,7 @@ h1 {
 .fa-heart {
   margin: 0 8px;
 }
-.game-over {
+#game-over {
   color: red;
   text-align: center;
   margin: 200px;
