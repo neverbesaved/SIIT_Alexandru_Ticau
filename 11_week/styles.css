@@ -1,19 +1,29 @@
+body,
+html {
+  height: 100%;
+}
+body {
+  box-sizing: border-box;
+  margin: 0;
+  background-color: #011f3f;
+  z-index: 2;
+}
 #game-container {
-    width: 1005;
+    width: 1005px;
     height: 505px;
     border: 1px solid black;
     margin: 5% auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
   }
   .player {
     width: 25px;
     height: 25px;
-    /* background-image: url("https://pngset.com/images/super-mario-run-announced-for-ios-new-super-mario-bros-new-super-mario-bros-person-human-transparent-png-2754054.png"); */
     background-color: red;
-    position: relative;
+    position: absolute;
   }
   .monster {
     width: 40px;
     height: 40px;
-    position: relative;
+    position: absolute;
   }

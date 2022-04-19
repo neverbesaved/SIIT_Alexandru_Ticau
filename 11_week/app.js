@@ -4,9 +4,8 @@ import Monster from './Monster.js'
 const gameContainer = document.getElementById('game-container')
 
 const player = new Player(gameContainer);
-document.addEventListener("keydown", function (eventKeydown) {
+document.addEventListener("keydown",(eventKeydown) => {
   if (eventKeydown.code === "ArrowDown") {
-    // console.log("keydown", eventKeydown)
     player.moveDown()
   }
   if (eventKeydown.code === "ArrowLeft") {
@@ -19,28 +18,9 @@ document.addEventListener("keydown", function (eventKeydown) {
     player.moveUp()
   }
 })
-// let numberOfObstacles = Math.floor(Math.random() * 30 + 10);
-// console.log(numberOfObstacles);
-// for (i = 0; i < numberOfObstacles; i++) {
-//   createObstacles();
-// }
 
-// // 3. cream numar random de obstacole , cu pozitii si dimensiuni random si le introducem pe playground
-// function createObstacles() {
-//   let width = Math.floor(Math.random() * 70 + 10);
-//   let height = Math.floor(Math.random() * 70 + 10);
-//   let obstaclePosX = Math.floor(Math.random() * 980);
-//   let obstaclePosY = Math.floor(Math.random() * 480);
-
-//   let obstacle = document.createElement("div");
-//   obstacle.setAttribute("class", "obstacle");
-//   obstacle.style.left = `${obstaclePosX}px`;
-//   obstacle.style.top = `${obstaclePosY}px`;
-//   obstacle.style.width = `${width}px`;
-//   obstacle.style.height = `${height}px`;
-let numberOfMonsters = Math.floor(Math.random()*15+5)
-console.log(numberOfMonsters)
-const monsterList = []
+let numberOfMonsters = Math.floor(Math.random()*15+5);
+const monsterList = [];
 for (let i = 0; i < numberOfMonsters; i++) {
   let monsterPosX = Math.floor(Math.random() * 900);
   let monsterPosY = Math.floor(Math.random() * 400);

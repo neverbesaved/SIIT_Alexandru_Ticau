@@ -3,7 +3,7 @@ class ElementMove {
     moveRight() {
       const oldLeft = parseInt(this.element.style.left);
       const newLeft = oldLeft + 10;
-      if (newLeft <= 370) {
+      if (newLeft <= 980) {
         this.element.style.left = newLeft + "px";
       }
     }
@@ -11,7 +11,7 @@ class ElementMove {
     moveDown() {
       const oldTop = parseInt(this.element.style.top);
       const newTop = oldTop + 10; 
-      if (newTop <= 370) {
+      if (newTop <= 480) {
         this.element.style.top = newTop + "px";
       }
     }
