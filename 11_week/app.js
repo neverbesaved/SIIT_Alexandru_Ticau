@@ -57,3 +57,31 @@ function moveMonster(myMonster) {
     myMonster.moveUp();
   }
 }
+
+function loseHeart() {
+    const hearts = document.getElementsByClassName("fa-heart");
+    for(let i=hearts.length;i>0;i--){
+        hearts[i].setAttribute("class","hidden");
+        hearts.pop();
+    }
+    if(hearts.length === 0){
+        gameOver();
+    }
+}
+function gameOver(){
+const gameOverText = document.createElement("h1");
+gameOverText.innerText="Game Over!";
+gameOverText.setAttribute("class","game-over");
+monsterList.splice(0,monsterList.length);
+const monsters = document.getElementsByClassName("monster");
+const monsterArray = Array.from(monsters);
+monsterArray.forEach(monster => {
+  monster.parentElement.removeChild(monster);
+});
+const player = document.getElementById("player");
+player.parentElement.removeChild(player);
+gameContainer.appendChild(gameOverText);
+}
+function restartGame(){
+
+}
