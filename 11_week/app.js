@@ -5,16 +5,17 @@ const monsterList = [];
 const gameContainer = document.getElementById("game-container");
 const restartButton = document.getElementById("restart-button");
 const hearts = document.getElementsByClassName("fa-heart");
+// heartsArray l-am pus cu let fiindca la restartul jocului il actualizez
 let heartsArray = Array.from(hearts);
-
+// isOver o voi folosi mai jos la restart si lose life
 let isOver = false;
 
 createMonsters();
 const player = new Player(gameContainer);
+// toate astea la fel sunt cu let fiindca le actualizez la restart 
 let playerHTML = document.getElementById("player");
-// loseHeart();
-// loseHeart();
-// loseHeart();
+let monsters = document.getElementsByClassName("monster");
+let monsterArray = Array.from(monsters);
 document.addEventListener("keydown", (eventKeydown) => {
   switch (eventKeydown.key) {
     case "ArrowDown":
@@ -45,8 +46,14 @@ function createMonsters() {
 const monsterMovement = setInterval(() => {
   monsterList.forEach((monster) => {
     moveMonster(monster);
+    // linia de mai jos actualizeaza la fiecare interval pozitia la player (imi dadea bug la restart), asta a fost unicul fix gasit :D
+    playerHTML = document.getElementById("player");
   });
+  if(!isOver){
+  isConjuring(monsterArray, playerHTML);
+}
 }, 100);
+
 function moveMonster(myMonster) {
   const movement = ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"];
   const randomIndex = Math.floor(Math.random() * movement.length);
@@ -64,6 +71,23 @@ function moveMonster(myMonster) {
   if (randomMove === "ArrowUp") {
     myMonster.moveUp();
   }
+}
+
+function isConjuring(monsters, player) {
+  let playerPosX = parseInt(player.style.left);
+  let playerPosY = parseInt(player.style.top);
+  monsters.forEach((monster) => {
+    let monsterPosX = parseInt(monster.style.left);
+    let monsterPosY = parseInt(monster.style.top);
+    if (
+      playerPosX < monsterPosX + 40 &&
+      playerPosX + 25 > monsterPosX &&
+      playerPosY < monsterPosY + 40 &&
+      25 + playerPosY > monsterPosY
+    ) {
+      loseHeart();
+    }
+  });
 }
 
 function loseHeart() {
@@ -113,6 +137,7 @@ function gameOver() {
 
 restartButton.addEventListener("click", () => {
   if (isOver) {
+    // introduc inapoi vietile pierdute si le afisez in DOM 
     heartsArray = Array.from(hearts);
     heartsArray.forEach((heart) => {
       heart.classList.remove("hidden");
@@ -120,6 +145,9 @@ restartButton.addEventListener("click", () => {
     const gameOverText = document.getElementById("game-over");
     gameOverText.remove();
     createMonsters();
+    // actualizez informatia despre monstri , odata ce s-au spawnat monstri diferiti , datele din array-ul de mai sus nu ar mai fi valide
+    monsters = document.getElementsByClassName("monster");
+    monsterArray = Array.from(monsters);
     const player = new Player(gameContainer);
     document.addEventListener("keydown", (eventKeydown) => {
       switch (eventKeydown.key) {
@@ -139,6 +167,7 @@ restartButton.addEventListener("click", () => {
     });
     isOver = !isOver;
   } else {
+    // it's a feature :)
     alert("The game is not over yet");
   }
 });
