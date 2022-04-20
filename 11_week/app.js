@@ -12,7 +12,7 @@ let isOver = false;
 
 createMonsters();
 const player = new Player(gameContainer);
-// toate astea la fel sunt cu let fiindca le actualizez la restart 
+// toate astea la fel sunt cu let fiindca le actualizez la restart
 let playerHTML = document.getElementById("player");
 let monsters = document.getElementsByClassName("monster");
 let monsterArray = Array.from(monsters);
@@ -49,9 +49,9 @@ const monsterMovement = setInterval(() => {
     // linia de mai jos actualizeaza la fiecare interval pozitia la player (imi dadea bug la restart), asta a fost unicul fix gasit :D
     playerHTML = document.getElementById("player");
   });
-  if(!isOver){
-  isConjuring(monsterArray, playerHTML);
-}
+  if (!isOver) {
+    isConjuring(monsterArray, playerHTML);
+  }
 }, 100);
 
 function moveMonster(myMonster) {
@@ -137,7 +137,7 @@ function gameOver() {
 
 restartButton.addEventListener("click", () => {
   if (isOver) {
-    // introduc inapoi vietile pierdute si le afisez in DOM 
+    // introduc inapoi vietile pierdute si le afisez in DOM
     heartsArray = Array.from(hearts);
     heartsArray.forEach((heart) => {
       heart.classList.remove("hidden");
