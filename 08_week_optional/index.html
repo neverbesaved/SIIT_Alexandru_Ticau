@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="select-section">
+      <h1>API Generator</h1>
+      <label for="server-call">Choose what API you want to access</label>
+      <div id="api-choice">
+        <select name="server-call" id="server-call">
+          <option class="options" value="Fox">Fox</option>
+          <option class="options" value="Dog">Dog</option>
+          <option class="options" value="Rick-and-Morty">Rick and Morty</option>
+        </select>
+        <button id="select-button">Select</button>
+      </div>
+    </div>
+    <div id="container"></div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
