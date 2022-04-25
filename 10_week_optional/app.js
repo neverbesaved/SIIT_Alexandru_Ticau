@@ -10,6 +10,29 @@ let myHangman = new Hangman();
 console.log(myHangman);
 displayHangman();
 
+function displayHangman() {
+  hangmanContainer.innerHTML = "<h2>" + myHangman.hiddenWord.join("") + "</h2>";
+}
+
+function hangmanGame(input) {
+  if (typeof input === "string" && input.length == 1) {
+    let isWrongAnswer = myHangman.guessChar(input);
+    displayHangman();
+    if (isWrongAnswer) {
+      loseHeart();
+    }
+  } else {
+    alert("Input can't be empty");
+  }
+}
+tryButton.addEventListener("click", () => {
+  hangmanGame(charInput.value);
+  charInput.value = "";
+  if (myHangman.word == myHangman.hiddenWord.join("")) {
+    gameWin();
+  }
+});
+
 function loseHeart() {
   heartsArray[heartsArray.length - 1].classList.add("hidden");
   heartsArray.pop();
@@ -51,23 +74,3 @@ function gameOver() {
   hangmanContainer.appendChild(gameOverText);
   createRestartButton();
 }
-function displayHangman() {
-  hangmanContainer.innerHTML = "<h2>" + myHangman.hiddenWord.join("") + "</h2>";
-}
-function hangmanGame(input) {
-  if (typeof input === "string" && input.length == 1) {
-    let isWrongAnswer = myHangman.guessChar(input);
-    displayHangman();
-    if (isWrongAnswer) {
-      loseHeart();
-    }
-  } else {
-    alert("Input can't be empty");
-  }
-}
-tryButton.addEventListener("click", () => {
-  hangmanGame(charInput.value);
-  if(myHangman.word == myHangman.hiddenWord.join("")){
-      gameWin();
-  }
-});
