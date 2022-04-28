@@ -1,0 +1,103 @@
+body,
+html {
+  height: 100%;
+}
+body {
+  box-sizing: border-box;
+  margin: 0;
+  width: 90%;
+  margin: auto;
+  background-color: #f2f2f7;
+  font-family: "Montserrat", sans-serif;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  margin: 250px;
+  font-size: 3rem;
+}
+header {
+  text-align: center;
+  padding-top: 10px;
+}
+.items {
+  padding: 10px;
+  margin: 5px;
+}
+.hidden {
+  display: none !important;
+}
+#display {
+  background-color: white;
+  height: 150%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#life-area {
+  text-align: center;
+  margin-bottom: 20px;
+  color: red;
+  font-size: 1.5rem;
+}
+#input-area {
+  display: flex;
+  justify-content: center;
+}
+#hangman-container {
+  text-align: center;
+  height: 80%;
+}
+#try-button {
+  box-shadow: inset 0px -3px 7px 0px #29bbff;
+  background: linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
+  background-color: #2dabf9;
+  border-radius: 3px;
+  border: 1px solid #0b0e07;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  padding: 9px 23px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #263666;
+}
+#try-button:hover {
+  background: linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
+  background-color: #0688fa;
+}
+#try-button:active {
+  position: relative;
+  top: 1px;
+}
+#restart-button {
+  box-shadow: inset 0px 1px 0px 0px #cf866c;
+  background: linear-gradient(to bottom, #d0451b 5%, #bc3315 100%);
+  background-color: #d0451b;
+  border-radius: 3px;
+  border: 1px solid #942911;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 13px;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #854629;
+}
+#restart-button:hover {
+  background: linear-gradient(to bottom, #bc3315 5%, #d0451b 100%);
+  background-color: #bc3315;
+}
+#restart-button:active {
+  position: relative;
+  top: 1px;
+}
+#game-over {
+  color: red;
+  margin-top: 150px;
+}
+#game-win {
+  color: #2a9d8f;
+  margin-top: 150px;
+}
