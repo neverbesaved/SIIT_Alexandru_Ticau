@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  width: 65%;
+}
+h1 {
+  text-align: center;
+  font-size: 3.5rem;
+  font-family: "Rubik Moonrocks", cursive;
+}
+h2 {
+  margin-top: 30px;
+  font-family: "Lato", sans-serif;
+}
+p {
+  font-size: 3rem;
+  font-family: "Lato", sans-serif;
+}
+#game-window {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  min-height: 65vh;
+  background-color: #f7ede2;
+}
+#player-window {
+  flex-basis: 33%;
+  text-align: center;
+}
+#computer-window {
+  flex-basis: 33%;
+  text-align: center;
+}
+#game-result {
+  flex-basis: 33%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#player-choice {
+  display: flex;
+  justify-content: center;
+  background-color: #f05365;
+  padding: 20px 0 40px 0;
+}
+#page-title {
+  background-color: #f05365;
+  color: #ecebe4;
+  padding: 20px 0 20px 0;
+}
+.item {
+  margin: 0 15px;
+  width: 125px;
+  border: 1px soli  d black;
+}
+.player-choice {
+  margin-top: 35px;
+}
+.win {
+  color: #70F8BA ;
+}
+.lose {
+  color: #FF8484;
+}
+.draw {
+  color: #EDD83D ;
+}
