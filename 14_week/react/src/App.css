@@ -1,0 +1,30 @@
+body { 
+  padding:5px;
+  background-color: rgb(247, 247, 247);
+}
+th,td { 
+  padding:7px 25px;
+}
+.App { 
+  width: 40%;
+  text-align:center;
+  margin: 40px auto;
+}
+.product-table {
+  display: inline-block;
+  padding: 10px;
+}
+.product-div {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5%;
+  background-color: white;
+}
+.user-input {
+  width: 60%;
+  height: 25px;
+}
+.filter-form { 
+  padding: 25px 10px 10px 10px;
+  background-color: #20232a;
+  color: white;
+}
